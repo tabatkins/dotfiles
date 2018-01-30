@@ -95,36 +95,33 @@ fi;
 if [[ "${USER}" == "root" ]]; then
 	userStyle="${bold}${red}";
 else
-	userStyle="${green}";
+	userStyle="${blue}";
 fi;
 
 # Highlight the hostname when connected via SSH.
 if [[ "${SSH_TTY}" ]]; then
 	hostStyle="${bold}${red}";
 else
-	hostStyle="${green}";
+	hostStyle="${purple}";
 fi;
+
+lineColor="${reset}${blue}"
 
 # Set the terminal title and prompt.
 #PS1="\[\033]0;\W\007\]"; # working directory base name
 #PS1+="\[${bold}\]\n"; # newline
 PS1="\n";
-PS1+="\[${green}\]";
-PS1+="╭╴" # box char
+PS1+="\[${lineColor}\]╭╴";
 PS1+="\[${userStyle}\]\u"; # username
 PS1+="\[${white}\] at ";
 PS1+="\[${hostStyle}\]\h"; # host
-PS1+="\[${white}\]";
 PS1+="\n";
-PS1+="\[${green}\]";
-PS1+="│ "
-PS1+="\w"; # working directory full path
-PS1+="\$(prompt_git \"\[${white}\] on \[${purple}\]\" \"\[${blue}\]\")"; # Git repository details
+PS1+="\[${lineColor}\]│ ";
+PS1+="\[${blue}\]\w"; # working directory full path
+PS1+="\$(prompt_git \"\[${white}\] on \[${purple}\]\" \"\[${bold}${yellow}\]\")"; # Git repository details
 PS1+="\n";
-PS1+="\[${green}\]";
-PS1+="╰╴"; # box char
-PS1+="\[${white}\]";
-PS1+="\[${reset}\]"; # `$` (and reset color)
+PS1+="\[${lineColor}\]╰╴";
+PS1+="\[${reset}\]"; # reset color
 export PS1;
 
 PS2="\[${yellow}\]→ \[${reset}\]";
