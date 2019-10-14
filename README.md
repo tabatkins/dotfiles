@@ -1,6 +1,6 @@
 # Tab's (previous Mathias’s) dotfiles
 
-![Screenshot of my shell prompt](https://i.imgur.com/EkEtphC.png)
+![Screenshot of my shell prompt](https://www.xanthir.com/pictures/console-example.png)
 
 ## Installation
 
