@@ -1,0 +1,5 @@
+# Add pyenv itself to the path
+export PATH="/home/tabatkins/.pyenv/bin:$PATH"
+
+# Add `~/bin` to the `$PATH`
+export PATH="$HOME/bin:$PATH";
