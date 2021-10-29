@@ -24,6 +24,9 @@
 	# Switch to a branch, creating it if necessary
 	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 
+	# Sort branches by activity
+	recent = branch --sort=-committerdate --format="%(committerdate:relative)%09%(refname:short)"
+
 	# Show verbose output about tags, branches or remotes
 	tags = tag -l
 	branches = branch -a
