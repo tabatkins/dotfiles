@@ -191,7 +191,3 @@
 [url "git://gist.github.com/"]
 
 	insteadOf = "gist:"
-
-[user]
-	email = jackalmage@gmail.com
-	name = Tab Atkins-Bittner
