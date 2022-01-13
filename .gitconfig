@@ -18,6 +18,10 @@
 	# Clone a repository including all submodules
 	c = clone --recursive
 
+	# Amend only the files *or* the commit message, not both.
+	amend-files = commit --amend --no-edit
+	amend-message = commit --amend --only
+
 	# Commit all changes
 	ca = !git add -A && git commit -av
 
