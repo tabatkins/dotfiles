@@ -117,6 +117,9 @@
 	# Use the `delta` command for all paging, omg omg omg
     pager = delta --dark
 
+    # Actually allow sublime to work properly for git
+    editor = subl -w
+
 [color]
 
 	# Use colors in Git commands that are capable of colored output when
