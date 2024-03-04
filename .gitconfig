@@ -22,6 +22,9 @@
 	amend-files = commit --amend --no-edit
 	amend-message = commit --amend --only
 
+	# git branch, but sorted by last commit time, and with extra info
+	br = for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
+
 	# Commit all changes
 	ca = !git add -A && git commit -av
 
