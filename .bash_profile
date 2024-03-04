@@ -45,3 +45,5 @@ fi;
 
 # Active fzf for fuzzy searching
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+eval "$(zoxide init --cmd cd bash)"
