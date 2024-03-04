@@ -22,6 +22,9 @@
 	amend-files = commit --amend --no-edit
 	amend-message = commit --amend --only
 
+	# Add an upstream remote, called as `git add-upstream OWNER/REPO`
+	add-upstream = "!f() { git remote add upstream https://github.com/$1.git; }; f"
+
 	# git branch, but sorted by last commit time, and with extra info
 	br = for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
 
