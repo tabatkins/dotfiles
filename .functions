@@ -194,4 +194,5 @@ function tre() {
 }
 
 # Invoke ripgrep with delta for prettiness
-function rip() { rg --json -C 2 "$1" | delta; }
+function rip() { rg --json --smart-case --engine=auto --context=2 "$1" | delta; }
+alias ripmulti="rip --multiline --multiline-dotall"
