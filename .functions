@@ -192,3 +192,6 @@ function o() {
 function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
+
+# Invoke ripgrep with delta for prettiness
+function rip() { rg --json -C 2 "$1" | delta; }

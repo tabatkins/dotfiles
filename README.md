@@ -68,5 +68,5 @@ These files assume that pyenv is being used to manage python versions and instal
 * [`cargo`](https://doc.rust-lang.org/cargo/getting-started/installation.html)
 * `zoxide`: `cargo install zoxide --locked`
 * [`fzf`](https://github.com/junegunn/fzf#installation)
-* [`delta`](https://crates.io/crates/git-delta)
-* `ripgrep`: `carge install ripgrep --locked`
+* `delta`: `cargo install git-delta --locked`
+* `ripgrep`: `cargo install ripgrep --locked`
