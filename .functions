@@ -194,5 +194,5 @@ function tre() {
 }
 
 # Invoke ripgrep with delta for prettiness
-function rip() { rg --json $1 | delta; }
-function ripmulti() { rg --json --multiline --multiline-dotall $1 | delta; }
+function rip() { rg --json $@ | delta; }
+alias ripmulti="rip --multiline --multiline-dotall"
