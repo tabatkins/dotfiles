@@ -62,3 +62,11 @@ git config --global user.email "$GIT_AUTHOR_EMAIL"
 These files assume that pyenv is being used to manage python versions and install locations. Remember to install [Pyenv](https://github.com/pyenv/pyenv/) (probably using the [automatic installer](https://github.com/pyenv/pyenv-installer)), then set it up with the appropriate versions (`pyenv install --list`, then `pyenv install x.y.z` for the specific versions you want, then `pyenv global x.y.z` and/or `pyenv local x.y.z` to select the installed versions.)
 
 (If you don't do this, `pip install` will constantly complain about the install directory not being writable, and suggesting running with sudo. Don't do that.)
+
+### Install a few extra tools
+
+* [`cargo`](https://doc.rust-lang.org/cargo/getting-started/installation.html)
+* `zoxide`: `cargo install zoxide --locked`
+* [`fzf`](https://github.com/junegunn/fzf#installation)
+* [`delta`](https://crates.io/crates/git-delta)
+* `ripgrep`: `carge install ripgrep --locked`
