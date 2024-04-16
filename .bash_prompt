@@ -75,12 +75,12 @@ lineColor="${reset}${blue}"
 PS1="\n";
 PS1+="\[${lineColor}\]╭╴\[${reset}\]";
 PS1+="\[${userStyle}\]\u\[${reset}\]"; # username
-PS1+="\[${white}\] at \[${reset}\]";
+PS1+=" at ";
 PS1+="\[${hostStyle}\]\h\[${reset}\]"; # host
 PS1+="\n";
 PS1+="\[${lineColor}\]│ \[${reset}\]";
 PS1+="\[${blue}\]\w\[${reset}\]"; # working directory full path
-PS1+="\$(__git_ps1  \"\[${white}\] on %s\[$clear\]\")"
+PS1+="\$(__git2_prompt  \" on %s\[$clear\]\")"
 PS1+="\n";
 PS1+="\[${lineColor}\]╰╴\[${reset}\]";
 export PS1;

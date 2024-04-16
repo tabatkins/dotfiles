@@ -113,7 +113,7 @@ printf -v __git_printf_supports_v -- '%s' yes >/dev/null 2>&1
 
 # stores the divergence from upstream in $p
 # used by GIT_PS1_SHOWUPSTREAM
-__git_ps1_show_upstream ()
+__git2_ps1_show_upstream ()
 {
 	local key value
 	local svn_remote svn_url_pattern count n
@@ -249,7 +249,7 @@ __git_ps1_show_upstream ()
 # injects color codes into the appropriate gitstring variables used
 # to build a gitstring. Colored variables are responsible for clearing
 # their own color.
-__git_ps1_colorize_gitstring ()
+__git2_ps1_colorize_gitstring ()
 {
 
 	if tput setaf 1 &> /dev/null; then
@@ -281,9 +281,9 @@ __git_ps1_colorize_gitstring ()
 		local c_white=$'\001\e[1;37m\002'
 		local c_yellow=$'\001\e[1;33m\002'
 	fi;
-	local bad_color="$c_red"
+	local bad_color="$c_bold$c_red"
 	local ok_color="$c_purple"
-	local flags_color="$bold$c_yellow"
+	local flags_color="$c_bold$c_yellow"
 
 	local branch_color=""
 	if [ $detached = no ]; then
@@ -328,7 +328,7 @@ __git_eread ()
 # conflict resolution with 'git commit' in the middle of a sequence of picks or
 # reverts then CHERRY_PICK_HEAD/REVERT_HEAD will not exist so we have to read
 # the todo file.
-__git_sequencer_status ()
+__git2_sequencer_status ()
 {
 	local todo
 	if test -f "$g/CHERRY_PICK_HEAD"
@@ -355,18 +355,18 @@ __git_sequencer_status ()
 	return 1
 }
 
-# __git_ps1 accepts 0 or 1 arguments (i.e., format string)
+# git_prompt accepts 0 or 1 arguments (i.e., format string)
 # when called from PS1 using command substitution
 # in this mode it prints text to add to bash PS1 prompt (includes branch name)
 #
-# __git_ps1 requires 2 or 3 arguments when called from PROMPT_COMMAND (pc)
+# git_prompt requires 2 or 3 arguments when called from PROMPT_COMMAND (pc)
 # in that case it _sets_ PS1. The arguments are parts of a PS1 string.
 # when two arguments are given, the first is prepended and the second appended
 # to the state string when assigned to PS1.
 # The optional third parameter will be used as printf format string to further
 # customize the output of the git-status string.
 # In this mode you can request colored hints using GIT_PS1_SHOWCOLORHINTS=true
-__git_ps1 ()
+__git2_prompt ()
 {
 	# preserve exit status
 	local exit=$?
@@ -491,7 +491,7 @@ __git_ps1 ()
 			fi
 		elif [ -f "$g/MERGE_HEAD" ]; then
 			r="|MERGING"
-		elif __git_sequencer_status; then
+		elif __git2_sequencer_status; then
 			:
 		elif [ -f "$g/BISECT_LOG" ]; then
 			r="|BISECTING"
@@ -600,7 +600,7 @@ __git_ps1 ()
 		fi
 
 		if [ -n "${GIT_PS1_SHOWUPSTREAM-}" ]; then
-			__git_ps1_show_upstream
+			__git2_ps1_show_upstream
 		fi
 	fi
 
@@ -615,7 +615,7 @@ __git_ps1 ()
 	fi
 
 	if [ -n "${GIT_PS1_SHOWCOLORHINTS-}" ]; then
-		__git_ps1_colorize_gitstring
+		__git2_ps1_colorize_gitstring
 	fi
 
 	local f="$h$w$i$u$s$p"
