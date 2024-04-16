@@ -47,3 +47,5 @@ fi;
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 eval "$(zoxide init --cmd cd bash)"
+
+~/bin/ssh-agent.sh
