@@ -48,4 +48,4 @@ fi;
 
 eval "$(zoxide init --cmd cd bash)"
 
-~/bin/sshagent.sh
+source ~/bin/sshagent.sh
