@@ -20,6 +20,8 @@ To update, `cd` into your local `dotfiles` repository and then:
 source bootstrap.sh
 ```
 
+(You might need to `sudo apt install rsync` first, depending on how your computer is already set up.)
+
 Alternatively, to update while avoiding the confirmation prompt:
 
 ```bash
@@ -65,7 +67,8 @@ These files assume that pyenv is being used to manage python versions and instal
 
 ### Install a few extra tools
 
-* [`cargo`](https://doc.rust-lang.org/cargo/getting-started/installation.html)
+* [`cargo`](https://doc.rust-lang.org/cargo/getting-started/installation.html) (then `source .bashrc` to get the environment set up)
+* Possibly the GNU c toolchain: `sudo apt install build-essential`
 * `zoxide`: `cargo install zoxide --locked`
 * [`fzf`](https://github.com/junegunn/fzf#installation)
 * `delta`: `cargo install git-delta --locked`
