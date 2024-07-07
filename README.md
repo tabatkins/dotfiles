@@ -63,6 +63,18 @@ git config --global user.email "$GIT_AUTHOR_EMAIL"
 
 These files assume that pyenv is being used to manage python versions and install locations. Remember to install [Pyenv](https://github.com/pyenv/pyenv/) (probably using the [automatic installer](https://github.com/pyenv/pyenv-installer)), then set it up with the appropriate versions (`pyenv install --list`, then `pyenv install x.y.z` for the specific versions you want, then `pyenv global x.y.z` and/or `pyenv local x.y.z` to select the installed versions.)
 
+You will likely need to install some prereqs before it can build successfully. For example:
+
+```bash
+apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev liblzma-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev
+pyenv install 3.12.4
+pyenv global 3.12.4
+pyenv install 3.9.19
+cd ~/bikeshed
+pyenv local 3.9.19
+```
+
+
 (If you don't do this, `pip install` will constantly complain about the install directory not being writable, and suggesting running with sudo. Don't do that.)
 
 ### Install a few extra tools
