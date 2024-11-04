@@ -67,11 +67,11 @@ You will likely need to install some prereqs before it can build successfully. F
 
 ```bash
 apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev liblzma-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev
-pyenv install 3.12.4
-pyenv global 3.12.4
-pyenv install 3.9.19
+pyenv install 3.13.0
+pyenv global 3.13.0
+pyenv install 3.9.20
 cd ~/bikeshed
-pyenv local 3.9.19
+pyenv local 3.9.20
 ```
 
 
