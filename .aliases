@@ -65,3 +65,6 @@ alias path='echo -e ${PATH//:/\\n}'
 
 # Set up some common defaults for ripgrep
 alias rg="rg --smart-case --engine=auto --context=2"
+
+# Link in the Google-approved gemini cli
+alias gemini='/google/bin/releases/gemini-cli/tools/gemini'
