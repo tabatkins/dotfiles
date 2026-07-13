@@ -1,5 +1,8 @@
 # Add pyenv itself to the path
 export PATH="$HOME/.pyenv/bin:$PATH"
 
-# Add `~/bin` to the `$PATH`
+# Local `~/bin`
 export PATH="$HOME/.local/bin:$HOME/bin:$PATH";
+
+# depot_tools, for Chromium development
+$ export PATH=/path/to/depot_tools:$PATH
